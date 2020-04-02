@@ -13,16 +13,27 @@ npm install --save use-progressive-image
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react';
+import Header from './Header';
 
-import MyComponent from 'use-progressive-image'
-import 'use-progressive-image/dist/index.css'
+const Cover = ({ image, className, isInverted, backgroundImage, children }) => {
+  const imageStyle = backgroundImage
+    ? { backgroundImage: `url('${backgroundImage}')` }
+    : null;
+  return (
+    <div className={`cover ${className ? className : ''}`} style={imageStyle}>
+      <Header className={isInverted ? 'header--invert' : ''} />
+      <h1 className='cover__text'>{children}</h1>
+      {image && (
+        <div className='cover__image'>
+          <img src={image} alt='cover' />
+        </div>
+      )}
+    </div>
+  );
+};
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
+export default Cover;
 ```
 
 ## License
