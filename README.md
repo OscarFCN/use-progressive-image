@@ -7,7 +7,8 @@
 ## Install
 
 ```bash
-npm install --save use-progressive-image
+npm install --save https://github.com/OscarFCN/use-progressive-image.git
+yarn add https://github.com/OscarFCN/use-progressive-image.git
 ```
 
 ## Usage
@@ -15,7 +16,7 @@ npm install --save use-progressive-image
 ```jsx
 import React from 'react';
 import Header from './Header';
-import {useProgressiveImage} from './../hooks/useProgressiveImage';
+import {useProgressiveImage} from 'use-progressive-image';
 
 const Cover = ({ image, className, isInverted, backgroundImage, children }) => {
   const [loaded, placeholder] = useProgressiveImage(backgroundImage, image);
