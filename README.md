@@ -15,10 +15,12 @@ npm install --save use-progressive-image
 ```jsx
 import React from 'react';
 import Header from './Header';
+import {useProgressiveImage} from './../hooks/useProgressiveImage';
 
 const Cover = ({ image, className, isInverted, backgroundImage, children }) => {
+  const [loaded, placeholder] = useProgressiveImage(backgroundImage, image);
   const imageStyle = backgroundImage
-    ? { backgroundImage: `url('${backgroundImage}')` }
+    ? { backgroundImage: `url(${loaded || placeholder})` }
     : null;
   return (
     <div className={`cover ${className ? className : ''}`} style={imageStyle}>
