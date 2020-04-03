@@ -7,8 +7,8 @@
 ## Install
 
 ```bash
-npm install --save https://github.com/OscarFCN/use-progressive-image.git
-yarn add https://github.com/OscarFCN/use-progressive-image.git
+npm install --save use-progressive-image
+yarn add use-progressive-image
 ```
 
 ## Usage
